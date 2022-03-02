@@ -9,7 +9,7 @@ namespace Exercise3Application
         {
 
             var numbers = new int[] { 1, 2, 3, 4, 5 };
-            var query = numbers.Select(x => x).Transform(x => x + 1);
+            var query = numbers.Select(num => num).Transform(num => num + 1);
             foreach (var number in query)
             {
                 Console.WriteLine(number);
@@ -17,15 +17,15 @@ namespace Exercise3Application
         }
     }
 
-    public delegate int MyFun(int num);
+    public delegate int MyFunction(int num);
 
     public static class MyClass
     {
-        public static IEnumerable<int> Transform(this IEnumerable<int> data, MyFun func)
+        public static IEnumerable<int> Transform(this IEnumerable<int> data, MyFunction func)
         {
-            foreach (var i in data)
+            foreach (var num in data)
             {
-                yield return func(i);
+                yield return func(num);
             }
         }
     }
