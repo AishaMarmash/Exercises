@@ -14,7 +14,7 @@ namespace Exercise2Application
         public static string GetTheLastWord(IEnumerable<string> words)
         {
             var query = words.Select(word => word).Where(word => word.Contains("e"))
-                            .OrderBy(x => x).LastOrDefault();
+                            .OrderBy(word => word).LastOrDefault();
             if (!string.IsNullOrEmpty(query))
                 return $"The last word is {query}";
             else
