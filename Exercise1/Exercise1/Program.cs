@@ -10,8 +10,8 @@ namespace Exercise1Application
 
             var numbers = new int[] { 1, 2, 3, 4, 5 };
             var squares = new int[] { 1, 20, 9, 16, 25 };
-            bool b = TestForSquares(numbers, squares);
-            Console.WriteLine(b);
+            bool result = TestForSquares(numbers, squares);
+            Console.WriteLine(result);
         }
 
         public static bool TestForSquares(IEnumerable<int> numbers, IEnumerable<int> squares)
